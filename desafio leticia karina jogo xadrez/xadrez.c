@@ -19,15 +19,14 @@ int main() {
 
     }
 
-{
     //movimentando o bispo
 
     printf("movimentando o bispo:\n");
     int bispo = 5; //quantidade de casas que o bispo pode andar
-    int i = 1;
-    while (i <= bispo) {
+    int j = 1;
+    while (j <= bispo) {
         printf("cima e direita\n");
-        i++;
+        j++;
     }
 
 
@@ -39,12 +38,26 @@ int main() {
         rainha--;
     } while (rainha > 0);
     
+
+    //movimentando o cavalo
+    printf("movimentando o cavalo\n");
+    int casasbaixo = 2; //quantidade de casas que o cavalo pode andar
+    int casasesquerda = 1; //quantidade de casas que o cavalo pode andar
+
+    //foi alterado as letras para variáveis de controle diferentes :)
+    int m;
+    for (m = 1; m <= casasbaixo; m++)
+        printf("baixo\n");
     
-
-    i++;
-
+    if (m == casasbaixo + 1) {
+        int cont = 0;
+        while (cont < casasesquerda) {
+            printf("esquerda\n");
+            cont++;
+        }
     }
 
     //espero que eu tenha feito o trabalho corretamente. :)
-    return 0;
-}
+
+    return 0;   
+    }
