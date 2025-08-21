@@ -17,6 +17,11 @@ int main() {
     for (int i = 1; i <= torre; i++) {
         printf("direita\n");
 
+    void moverTorre(int casas) { //função para mover a torre
+        if (casas > 0) {
+            printf("direita\n");
+            moverTorre(casas - 1);
+        }
     }
 
     //movimentando o bispo
@@ -28,7 +33,11 @@ int main() {
         printf("cima e direita\n");
         j++;
     }
-
+     void moverBispo(int casas) { //função para mover o bispo
+        if (casas > 0) {
+            printf("cima e direita\n");
+            moverBispo(casas - 1);
+        }
 
     //movimentando a rainha 
     printf("movimentando a rainha\n");
@@ -38,7 +47,12 @@ int main() {
         rainha--;
     } while (rainha > 0);
     
-
+       void moverRainha(int casas) { //função para mover a rainha
+        if (casas > 0) {
+            printf("esquerda\n");
+            moverRainha(casas - 1);
+        }
+    }
     //movimentando o cavalo
     printf("movimentando o cavalo\n");
     int casasbaixo = 2; //quantidade de casas que o cavalo pode andar
@@ -54,6 +68,14 @@ int main() {
         while (cont < casasesquerda) {
             printf("esquerda\n");
             cont++;
+        }
+        void moverCavalo(int casasBaixo, int casasEsquerda) { //função para mover o cavalo
+            if (casasBaixo > 0 && casasEsquerda > 0) {
+                printf("baixo\n");
+                moverCavalo(casasBaixo - 1, casasEsquerda);
+                printf("esquerda\n");
+                moverCavalo(casasBaixo, casasEsquerda - 1);
+            }
         }
     }
 
